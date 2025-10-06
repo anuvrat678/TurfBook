@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #22c55e;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  
+}
+.nav-link {
+  @apply text-gray-600 hover:text-green-500 transition-colors duration-200;
+}
+
+.mobile-nav-link {
+  @apply p-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors;
+}
+
+.btn-primary {
+  @apply bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors;
+}
+.btn-secondary {
+  @apply text-green-500 hover:text-green-600 transition-colors;
+}
+
+
+
+/* for hover in navbar */
+.custom-nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  left: 50%;
+  bottom: 0;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.custom-nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+/* Rich text editor styles */ 
+.rich-text-editor {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.rich-text-editor.border-red-500 .ql-toolbar,
+.rich-text-editor.border-red-500 .ql-container {
+  border-color: #ef4444 !important;
+}
+
+.ql-toolbar {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border: 2px solid #d1d5db;
+}
+
+.ql-container {
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border: 2px solid #d1d5db;
+  border-top: none;
+  font-size: 14px;
+  min-height: 150px;
+}
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border-color: #d1d5db;
+}
+
+.ql-toolbar.ql-snow:hover,
+.ql-container.ql-snow:focus {
+  border-color: #16a34a;
+}
+
+.ql-editor {
+  min-height: 150px;
+  line-height: 1.6;
+}
+
+.ql-editor.ql-blank::before {
+  color: #9ca3af;
+  font-style: normal;
+}
+
+/* Rich Text Display Styles */
+.prose {
+  max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+  color: #111827;
+}
+
+.prose h1 { font-size: 1.5rem; }
+.prose h2 { font-size: 1.25rem; }
+.prose h3 { font-size: 1.125rem; }
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose ul, .prose ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .prose {
+    font-size: 0.9rem;
+  }
+  
+  .prose h1 { font-size: 1.25rem; }
+  .prose h2 { font-size: 1.125rem;}}
