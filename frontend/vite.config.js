@@ -5,7 +5,6 @@ export default defineConfig(({ mode }) => {
   // Load environment variables
   const env = loadEnv(mode, process.cwd(), '');
   
-  // Use environment variable or fallback to localhost for development
   const apiUrl = env.VITE_API_URL;
 
   return {

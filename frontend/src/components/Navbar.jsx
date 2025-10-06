@@ -4,7 +4,7 @@ import { Menu, X, User, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 
-function Navbar() { 
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -29,9 +29,8 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
@@ -80,8 +79,8 @@ function Navbar() {
               <div className="relative group">
                 <div className="flex items-center gap-2 cursor-pointer hover:text-green-500 transition-colors">
                   <User className="w-5 h-5" />
-                  <span className={`${scrolled ? 'text-gray-600' : 'text-white'}`}> 
-                   <Link  to="/dashboard"> {user.name} </Link>
+                  <span className={`${scrolled ? 'text-gray-600' : 'text-white'}`}>
+                    <Link to="/dashboard"> {user.name} </Link>
                   </span>
                 </div>
                 <div className="absolute hidden group-hover:block right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2">
@@ -92,7 +91,7 @@ function Navbar() {
                     <LogOut className="w-4 h-4" />
                     Logout
                   </button>
-                </div> 
+                </div>
               </div>
             ) : (
               <div className="flex gap-4 items-center">
@@ -174,7 +173,7 @@ function Navbar() {
                 <>
                   <div className="p-2 flex items-center gap-2">
                     <User className="w-5 h-5" />
-                    {user.name}
+                    <Link to="/dashboard"> {user.name} </Link>
                   </div>
                   <button
                     onClick={handleLogout}
