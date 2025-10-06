@@ -1,13 +1,13 @@
 import axios from 'axios';
 
+
 const api = axios.create({
-  baseURL: '/api', // Use proxy path
+  baseURL: import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json'
   }
 });
-
 // Request interceptor for auth token
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
