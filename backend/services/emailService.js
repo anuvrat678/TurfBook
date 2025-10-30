@@ -15,7 +15,7 @@ export const sendVerificationEmail = async (email, token, name) => {
   try {
     const transporter = createTransporter();
     
-    const verificationUrl = `${process.env.CLIENT_URL || 'http://localhost:5173'}/verify-email?token=${encodeURIComponent(token)}`;
+    const verificationUrl = `${process.env.FRONTEND_URL || 'http://localhost:5173'}/verify-email?token=${encodeURIComponent(token)}`;
     
     console.log('📧 Sending verification email to:', email);
     console.log('🔗 Original token:', token);
@@ -66,7 +66,7 @@ export const sendVerificationEmail = async (email, token, name) => {
 export const sendPasswordResetEmail = async (email, token, name) => {
   try {
     const transporter = createTransporter();
-    const resetUrl = `${process.env.CLIENT_URL}/reset-password?token=${token}`;
+    const resetUrl = `${process.env.FRONTEND_URL}/reset-password?token=${token}`;
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
